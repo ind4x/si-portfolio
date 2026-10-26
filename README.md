@@ -1,52 +1,61 @@
-# Systems information portfolio
+# Systems Information (SI) Laboratory Portfolio
 
-This repository centralizes academic and personal work related to Enterprise
-Resource Planning (ERP) systems. It focuses on the Odoo 17 framework and
-containerized deployments.
+This repository hosts practical implementations, ERP customizations, and enterprise
+process architectures developed for the Systems Information and ERP curriculum at
+Mundiapolis University, centered on Odoo 17.0 and containerized micro-architectures.
 
-## Projects
+---
 
-### Food quality and safety management
+## Laboratory Overview
 
-This project involves a custom Odoo 17 module designed to manage food safety
-requirements, including perishability, storage temperatures, and allergen
-tracking.
+| Module | Category | Core Methodology | Primary Deliverables | Reference |
+| :--- | :--- | :--- | :--- | :--- |
+| **[odoo-fundamentals](./labs/odoo-fundamentals)** | Laboratory | Odoo ORM models, relational mappings (M2O, O2M, M2M), QWeb views, ACL security groups | Student academic ERP module | [Lab](./labs/odoo-fundamentals/README.md) |
+| **[food-quality-management](./projects/food-quality-management)** | Capstone Project | Food safety compliance, automated Cron inspection tickets, logistic shipping security locks, QWeb PDF reporting | Enterprise food quality addon | [Project](./projects/food-quality-management/README.md) |
 
-Key implementations include:
-- Automated quality control tickets via Cron jobs.
-- Logistics security locks to prevent shipping non-compliant lots.
-- Allergen management integrated with eCommerce.
-- ORM extensions for stock lots and product templates.
+---
 
-[View project details](./projects/food-quality-management/)
+## General Running Instructions
 
-## Labs
+### Prerequisites
 
-### Odoo fundamentals
+- **Docker:** Engine 24.0+ & Docker Compose v2
+- **Python:** 3.10+ (for local toolings)
+- **PostgreSQL Client** (optional for database inspection)
 
-This section contains exercises focused on the core architecture of Odoo 17,
-covering the ORM, views, and security.
+### Setup and Environment
 
-Topics include:
-- Model definitions and field types (Many2one, One2many, Many2many).
-- View inheritance and advanced UI (Kanban, Graph, Search).
-- Access rules and security group configuration.
-- Data integrity via SQL and Python constraints.
+1. **Clone the repository:**
+   ```bash
+   git clone git@github.com:ind4x/si-portfolio.git
+   cd si-portfolio
+   ```
 
-[View lab details](./labs/odoo-fundamentals/)
+2. **Deploy via Docker Compose:**
+   Navigate to the deployment folder:
+   ```bash
+   cd projects/food-quality-management/deployment
+   docker compose up -d
+   ```
 
-## Technologies used
+3. **Access the ERP Instance:**
+   Open a web browser at `http://localhost:8069`.
+   - **Database Name:** `odoo_si`
+   - **Default Login:** `admin` / `admin`
 
-- ERP Platform: Odoo 17.0
-- Backend: Python, PostgreSQL
-- Frontend: XML (Odoo Views), QWeb (Reporting)
-- Infrastructure: Docker, Docker Compose
-- Methodology: BPMN 2.0, UML
+---
 
-## License
+## Technology Stack
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file
-for details.
+- **ERP Platform:** Odoo 17.0 (Community Edition)
+- **Backend & ORM:** Python 3, PostgreSQL 15
+- **Views & UI:** XML, QWeb, Kanban, Graph Views
+- **Infrastructure:** Docker, Docker Compose
+- **Enterprise Modeling:** BPMN 2.0, UML
 
-Authored by Youssef Fellah.
-Developed for the Engineering Cycle at Mundiapolis University.
+---
+
+## Author
+
+- **Author:** Youssef Fellah ([ind4x_](https://github.com/ind4x))
+- **Institution:** Mundiapolis University, Engineering Cycle
